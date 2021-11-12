@@ -1,5 +1,7 @@
 var tasks = {};
 
+// function createTask
+
 var createTask = function(taskText, taskDate, taskList) {
   // create elements that make up a task item
   var taskLi = $("<li>").addClass("list-group-item");
@@ -45,6 +47,10 @@ var loadTasks = function() {
 var saveTasks = function() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
+
+// var stringOne = "Hello Tom's Toys" + " it was a great day" + " wow";
+// var stringTwo = 'Normal String Syntax ' + variable + " wow";
+// var stringLiteral = `Normal String Syntax ${variable} wow`;
 
 var auditTask = function(taskEl) {
   // get date from task element
