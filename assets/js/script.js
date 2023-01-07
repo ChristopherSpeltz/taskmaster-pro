@@ -228,12 +228,12 @@ var auditTask = function (taskEl) {
   // get date from task element
   var date = $(taskEl).find("span").text().trim();
   // ensure it worked
-  console.log(date);
+  // console.log(date);
 
   // convert to moment object at 5:00pm
   var time = moment(date, "L").set("hour", 17);
   // this should print out an object for the value of the date variable, but at 5:00pm of that date
-  console.log(time);
+  // console.log(time);
 
   // remove any old classes from element
   $(taskEl).removeClass("list-group-item-warning list-group-item-danger");
@@ -244,6 +244,7 @@ var auditTask = function (taskEl) {
   } else if (Math.abs(moment().diff(time, "days")) <= 2) {
     $(taskEl).addClass("list-group-item-warning");
   }
+  console.log(taskEl)
 };
 
 // remove all tasks
@@ -258,3 +259,9 @@ $("#remove-tasks").on("click", function () {
 
 // load tasks for the first time
 loadTasks();
+
+setInterval(function () {
+  $(".card .list-group-item").each(function (index, el) {
+    auditTask(el);
+  });
+}, 1800000);
