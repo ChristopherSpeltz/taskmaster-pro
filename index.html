@@ -32,7 +32,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <script
+      src="https://kit.fontawesome.com/f0fb4e0600.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Taskmaster Pro</title>
   </head>
@@ -56,17 +59,21 @@
         </button> -->
         <button
           id="create-task"
-          class="btn btn-block btn-success"
+          class="btn btn-block btn-success mr-2"
           data-toggle="modal"
           data-target="#task-form-modal"
         >
           <!-- What does the mr-2 do? Hint: it's from Bootstrap! -->
-          <span class="oi oi-plus mr-2"></span>Add Task
+          <!-- <span class="oi oi-plus mr-2"></span> -->
+          <i class="fa-solid fa-plus"></i>
+          Add Task
         </button>
-        <button id="remove-tasks" class="btn btn-block btn-danger mb-2 mb-md-4">
+        <button id="remove-tasks" class="btn btn-block btn-danger mb-2 mb-md-4 mr-2">
+          <i class="fa-solid fa-trash-can"></i>
           Delete All Tasks
         </button>
-        <p class="mt-auto d-none d-lg-block">
+        <i class="fa-regular fa-square-check oi oi-task display-1 text-center mb-2 d-none d-lg-block mt-auto"></i>
+        <p class="d-none d-lg-block">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptas
           architecto ipsa excepturi aut non laudantium sequi fugit officiis
           optio deleniti asperiores rem eius laborum maxime blanditiis culpa,
@@ -124,7 +131,8 @@
           <div
             class="w-100 bg-danger p-3 text-center text-light display-4 bottom-trash"
           >
-            <span class="oi oi-trash mx-auto mb-4"> </span> Drop Here to Remove.
+            <!-- <span class="oi oi-trash mx-auto mb-4"> </span> -->
+            <i class="fa-solid fa-trash-can"></i> Drop Here to Remove.
           </div>
         </footer>
       </main>
