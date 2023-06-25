@@ -54,15 +54,20 @@ $(".card .list-group").sortable({
   helper: "clone",
   activate: function (event, ui) {
     console.log(ui);
+    $(this).addClass("dropover");
   },
   deactivate: function (event, ui) {
     console.log(ui);
+    $(this).removeClass("dropover");
   },
   over: function (event) {
     console.log(event);
+    $(event.target).addClass("dropover-active");
   },
   out: function (event) {
     console.log(event);
+    $(event.target).removeClass("dropover-active");
+
   },
   update: function () {
     var tempArr = [];
@@ -244,7 +249,7 @@ var auditTask = function (taskEl) {
   } else if (Math.abs(moment().diff(time, "days")) <= 2) {
     $(taskEl).addClass("list-group-item-warning");
   }
-  console.log(taskEl)
+  console.log(taskEl);
 };
 
 // remove all tasks
@@ -264,4 +269,6 @@ setInterval(function () {
   $(".card .list-group-item").each(function (index, el) {
     auditTask(el);
   });
-}, 1800000);
+}, (1000 * 60) * 30);
+
+// /* left off just starting lesson 5.5.6 */
